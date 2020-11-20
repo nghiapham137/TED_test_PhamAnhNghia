@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Student</title>
+</head>
+<body>
+<h2>List Student</h2>
+<table border="1">
+    <tr>
+        <td>Họ tên</td>
+        <td>Mã lớp</td>
+        <td>Tên lớp</td>
+        <td>Ngày sinh</td>
+    </tr>
+    <tr th:each="student: ${students}">
+        <td th:text="${student.fullName}"></td>
+        <td th:text="${student.getAClass().getClassCode()}"></td>
+        <td th:text="${student.getAClass().getClassName()}"></td>
+        <td th:text="${student.dob}"></td>
+    </tr>
+</table>
+
+
+
+</body>
+</html>
